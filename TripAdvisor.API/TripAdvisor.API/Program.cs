@@ -1,3 +1,8 @@
+using TripAdvisor.Db.Models;
+using TripAdvisor.Dto.Config;
+using TripAdvisor.Service.Implementations;
+using TripAdvisor.Service.Interfaces;
+
 namespace TripAdvisor.API
 {
     public class Program
@@ -6,7 +11,13 @@ namespace TripAdvisor.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Add configurations to the containers
+            builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
+            builder.Services.Configure<TripAdvisorSettings>(builder.Configuration.GetSection("TripAdvisorSettings"));
+
+
             // Add services to the container.
+            builder.Services.AddScoped<IWeatherService, WeatherService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
