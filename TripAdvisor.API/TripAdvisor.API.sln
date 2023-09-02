@@ -5,6 +5,14 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor.API", "TripAdvisor.API\TripAdvisor.API.csproj", "{27026F17-17DA-433F-8DE1-ED2B7B5C4CB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor.Db", "TripAdvisor.Db\TripAdvisor.Db.csproj", "{07B1EA67-10F9-4896-8EC1-C6A105BE06B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor.Dto", "TripAdvisor.Dto\TripAdvisor.Dto.csproj", "{82F97DCC-743C-44F9-8968-55EE62AC5AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor.Repository", "TripAdvisor.Repository\TripAdvisor.Repository.csproj", "{22816636-0688-484B-9085-063EE2205ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor.Service", "TripAdvisor.Service\TripAdvisor.Service.csproj", "{F8EE1F7B-54DD-42FB-B538-022B139369A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{27026F17-17DA-433F-8DE1-ED2B7B5C4CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27026F17-17DA-433F-8DE1-ED2B7B5C4CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27026F17-17DA-433F-8DE1-ED2B7B5C4CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B1EA67-10F9-4896-8EC1-C6A105BE06B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B1EA67-10F9-4896-8EC1-C6A105BE06B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B1EA67-10F9-4896-8EC1-C6A105BE06B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B1EA67-10F9-4896-8EC1-C6A105BE06B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F97DCC-743C-44F9-8968-55EE62AC5AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F97DCC-743C-44F9-8968-55EE62AC5AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F97DCC-743C-44F9-8968-55EE62AC5AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F97DCC-743C-44F9-8968-55EE62AC5AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22816636-0688-484B-9085-063EE2205ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22816636-0688-484B-9085-063EE2205ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22816636-0688-484B-9085-063EE2205ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22816636-0688-484B-9085-063EE2205ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EE1F7B-54DD-42FB-B538-022B139369A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EE1F7B-54DD-42FB-B538-022B139369A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EE1F7B-54DD-42FB-B538-022B139369A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EE1F7B-54DD-42FB-B538-022B139369A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
