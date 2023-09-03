@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TripAdvisor.Service.Interfaces
 {
-    public interface IWeatherService
+    public interface IHttpClientService
     {
-        Task FetchDistrictsTemperature();
+        Task<T> SendGetRequest<T>(string queryParams);
     }
 }

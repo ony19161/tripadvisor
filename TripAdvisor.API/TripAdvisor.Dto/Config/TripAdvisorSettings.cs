@@ -8,8 +8,6 @@ namespace TripAdvisor.Dto.Config
 {
     public class TripAdvisorSettings
     {
-        public string WeatherForCastApiBaseUrl { get; set; }
-        public Dictionary<string, string> Parameters { get; set; }
         public IList<DistrictInfo> DistrictList { get; set; }
     }
 }

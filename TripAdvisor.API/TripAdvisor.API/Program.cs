@@ -14,6 +14,7 @@ namespace TripAdvisor.API
             // Add configurations to the containers
             builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
             builder.Services.Configure<TripAdvisorSettings>(builder.Configuration.GetSection("TripAdvisorSettings"));
+            builder.Services.Configure<WeatherForecastApiSettings>(builder.Configuration.GetSection("WeatherForecastApiSettings"));
 
 
             // Add services to the container.
