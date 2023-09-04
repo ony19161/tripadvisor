@@ -1,12 +1,36 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Options;
+using SqlKata.Compilers;
+using SqlKata.Execution;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TripAdvisor.Db.Interfaces;
+using TripAdvisor.Db.Models;
 
 namespace TripAdvisor.Db.Implementations
 {
-    internal class AppDbContext
+    public class AppDbContext : IDbContext
     {
+        private readonly string connectionString;
+
+        public AppDbContext(IOptions<ConnectionStrings> connectionsStringOptions)
+        {
+            connectionString = connectionsStringOptions.Value.DefaultConnection;
+        }
+        public async Task<IDbConnection> CreateConnectionAsync()
+        {
+            var sqlConnection = new SqlConnection(connectionString);
+            await sqlConnection.OpenAsync();
+            return sqlConnection;
+        }
+
+        public QueryFactory GetDb(IDbConnection connection)
+        {
+            return new QueryFactory(connection, new SqlServerCompiler());
+        }
     }
 }
