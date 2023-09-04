@@ -20,10 +20,12 @@ namespace TripAdvisor.Service.Implementations
 
         public async Task<T> SendGetRequest<T>(string queryParams)
         {
-            var client = new HttpClient();
+            using HttpClient client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, $"{baseUrl}{queryParams}");
+            
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
+            
             var responseString = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<T>(responseString);

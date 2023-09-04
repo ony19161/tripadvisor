@@ -18,6 +18,8 @@ namespace TripAdvisor.API
 
 
             // Add services to the container.
+
+            builder.Services.AddScoped<IHttpClientService, HttpClientService>();
             builder.Services.AddScoped<IWeatherService, WeatherService>();
 
             builder.Services.AddControllers();

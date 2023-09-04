@@ -37,7 +37,7 @@ namespace TripAdvisor.Service.Implementations
                 apiSettings.Parameters["latitude"] = item.Lat;
                 apiSettings.Parameters["longitude"] = item.Long;
 
-                var queryParams = HttpUtility.UrlEncode(string.Join("&", apiSettings.Parameters.Select(p => $"{p.Key}={p.Value}")));
+                var queryParams = string.Join("&", apiSettings.Parameters.Select(p => $"{p.Key}={p.Value}"));
 
                 var apiResponse = await _httpClientService.SendGetRequest<OpenMetroGetResponse>(queryParams);
             }
