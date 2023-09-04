@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TripAdvisor.Db\TripAdvisor.Db.csproj" />
     <ProjectReference Include="..\TripAdvisor.Dto\TripAdvisor.Dto.csproj" />
+    <ProjectReference Include="..\TripAdvisor.Repository\TripAdvisor.Repository.csproj" />
     <ProjectReference Include="..\TripAdvisor.Service\TripAdvisor.Service.csproj" />
   </ItemGroup>
 

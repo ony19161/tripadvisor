@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TripAdvisor.Db\TripAdvisor.Db.csproj" />
+    <ProjectReference Include="..\TripAdvisor.Dto\TripAdvisor.Dto.csproj" />
+  </ItemGroup>
+
 </Project>

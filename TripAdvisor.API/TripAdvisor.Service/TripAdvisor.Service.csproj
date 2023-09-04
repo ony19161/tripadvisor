@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TripAdvisor.Dto\TripAdvisor.Dto.csproj" />
+    <ProjectReference Include="..\TripAdvisor.Repository\TripAdvisor.Repository.csproj" />
   </ItemGroup>
 
 </Project>

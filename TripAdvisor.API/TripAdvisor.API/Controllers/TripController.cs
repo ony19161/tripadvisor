@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TripAdvisor.Dto.Request;
 using TripAdvisor.Service.Interfaces;
 
 namespace TripAdvisor.API.Controllers
@@ -15,8 +16,8 @@ namespace TripAdvisor.API.Controllers
         }
 
         [HttpGet]
-        [Route("api/trip/fetch-district-data")]
-        public async Task<IActionResult> FetchDistrictData()
+        [Route("api/trip/suggest")]
+        public async Task<IActionResult> FetchDistrictData([FromQuery] TripQueryParameters parameters)
         {
             return Ok("Success");
         }
