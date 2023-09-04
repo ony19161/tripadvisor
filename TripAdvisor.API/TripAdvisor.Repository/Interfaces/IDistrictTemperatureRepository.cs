@@ -10,6 +10,5 @@ namespace TripAdvisor.Repository.Interfaces
 {
     public interface IDistrictTemperatureRepository : IRepository<DistrictTemperature>
     {
-        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TripAdvisor.Dto.Request;
+using TripAdvisor.Service.CustomExceptions;
 using TripAdvisor.Service.Interfaces;
 
 namespace TripAdvisor.API.Controllers
@@ -8,18 +9,32 @@ namespace TripAdvisor.API.Controllers
     [ApiController]
     public class TripController : ControllerBase
     {
-        private readonly IWeatherService _weatherService;
+        private readonly ITripService _tripService;
 
-        public TripController(IWeatherService weatherService)
+        public TripController(ITripService tripService)
         {
-            _weatherService = weatherService;
+            _tripService = tripService;
         }
 
         [HttpGet]
         [Route("api/trip/suggest")]
         public async Task<IActionResult> FetchDistrictData([FromQuery] TripQueryParameters parameters)
         {
-            return Ok("Success");
+            try
+            {
+                await _tripService.GetTripSuggestion(parameters);
+                return Ok("Success");
+            }
+            catch (InvalidQueryParamsExceptions ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }
