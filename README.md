@@ -11,9 +11,10 @@
 # Execute the "TripAdvisor.API.exe"
     1. Download the "tripvisitor.api.zip" file from this repository, which is available in "tripadvisor/tripadvisor.api.release/" folder of this repository.
     2. Unzip the folder in your computer's prefered location.
-    3. Double click on "TripAdvisor.API.exe"
-    4. Now go to your favorite browser, and type or paste the url "http://localhost:5000/swagger/index.html"
-    5. A swagger page will be loaded with three api
+    3. Open appsettings.json file, nd update "YOUR_SERVER_ADDRESS", "YOUR_USERNAME", "YOUR_PWSSEORD" strings in "ConnectionStrings" section, with your Ms Sql Server values.
+    4. Double click on "TripAdvisor.API.exe"
+    5. Now go to your favorite browser, and type or paste the url "http://localhost:5000/swagger/index.html"
+    6. A swagger page will be loaded with three api
 
 # Fetch data using the API's
     1. Load/Fetch district temperature data using "api/district/fetch-temperature-data", this api will take some time to fetch data.
