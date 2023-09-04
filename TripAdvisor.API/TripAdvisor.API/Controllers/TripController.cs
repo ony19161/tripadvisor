@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TripAdvisor.Dto.Request;
+using TripAdvisor.Dto.Response;
 using TripAdvisor.Service.CustomExceptions;
 using TripAdvisor.Service.Interfaces;
 
@@ -22,8 +23,10 @@ namespace TripAdvisor.API.Controllers
         {
             try
             {
-                await _tripService.GetTripSuggestion(parameters);
-                return Ok("Success");
+                ApiResponse<string> apiResponse = new ApiResponse<string>();
+                apiResponse.Data = await _tripService.GetTripSuggestion(parameters);
+
+                return Ok(apiResponse);
             }
             catch (InvalidQueryParamsExceptions ex)
             {

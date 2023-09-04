@@ -14,12 +14,13 @@ namespace TripAdvisor.Service.Implementations
     public class TripService : ITripService
     {
         private readonly IValidator<TripQueryParameters> _validator;
-        private readonly IDistrictTemperatureRepository _districtTemperatureRepository;
+        private readonly IDistrictService _districtService;
 
-        public TripService(IValidator<TripQueryParameters> validator, IDistrictTemperatureRepository districtTemperatureRepository)
+        public TripService(IValidator<TripQueryParameters> validator, 
+            IDistrictService districtService)
         {
             _validator = validator;
-            _districtTemperatureRepository = districtTemperatureRepository;
+            _districtService = districtService;
         }
 
 
@@ -32,7 +33,15 @@ namespace TripAdvisor.Service.Implementations
                 throw new InvalidQueryParamsExceptions(string.Join(",", result.Errors.Select(e => e.ErrorMessage).ToList()));
             }
 
-            return "valid";
+            double startingLocationTemperature = await _districtService.GetDistrictTemperature(parameters.StartingLocation, parameters.TravelDate);
+            double destinationTemperature = await _districtService.GetDistrictTemperature(parameters.Destination, parameters.TravelDate);
+
+
+            return destinationTemperature < startingLocationTemperature
+                   ?
+                    $"{parameters.Destination} is cooler than {parameters.StartingLocation}, you must visit the place"
+                   :
+                    $"{parameters.Destination} is hotter than {parameters.StartingLocation}, we suggest you to not visit the place";
         }
     }
 }

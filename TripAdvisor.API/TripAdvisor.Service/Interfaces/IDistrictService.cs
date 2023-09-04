@@ -10,5 +10,6 @@ namespace TripAdvisor.Service.Interfaces
     public interface IDistrictService
     {
         Task<IList<CoolestDistrict>> GetTop10CoolestDistricts();
+        Task<double> GetDistrictTemperature(string district, string date);
     }
 }

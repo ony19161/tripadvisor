@@ -70,5 +70,12 @@ namespace TripAdvisor.Repository.Implementations
 
             return resultSet.ToList();
         }
+
+        public async Task<T> GetScalerByQueryAsync<T>(string query)
+        {
+            using var dbConnection = await dbContext.CreateConnectionAsync();
+
+            return await dbConnection.QueryFirstOrDefaultAsync<T>(query);            
+        }
     }
 }

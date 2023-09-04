@@ -47,7 +47,7 @@ namespace TripAdvisor.Service.Validators
 
         private bool IsValidDateFormat(string dateString)
         {
-            return DateTime.TryParseExact(dateString, "dd/MM/yyyy", CultureInfo.InstalledUICulture, DateTimeStyles.AssumeLocal, out tripDate);
+            return DateTime.TryParseExact(dateString, "yyyy-MM-dd", CultureInfo.InstalledUICulture, DateTimeStyles.AssumeLocal, out tripDate);
         }
 
         private bool IsValidTripdate(string date)

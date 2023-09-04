@@ -11,6 +11,7 @@ namespace TripAdvisor.Repository.Interfaces
         Task<TEntity> GetByIdAsync<IdType>(IdType id);
         Task<IList<TEntity>> GetAllAsync();
         Task<IList<T>> GetListByQueryAsync<T>(string query);
+        Task<T> GetScalerByQueryAsync<T>(string query);
         Task<int> InsertAsync(TEntity entity);
         Task BulkInsertAsync(IList<TEntity> entities);
         Task<int> UpdateAsync(TEntity entity);

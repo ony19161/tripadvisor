@@ -10,6 +10,9 @@ namespace TripAdvisor.Dto.Request
     {
         public string StartingLocation { get; set; }
         public string Destination { get; set; }
+        /// <summary>
+        /// Taravel date in yyyy-MM-dd format
+        /// </summary>
         public string TravelDate { get; set; }
     }
 }
